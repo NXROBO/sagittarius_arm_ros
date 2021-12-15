@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<launch>
+
+  <arg name="joint_pub_gui"		default="false"/>
+  <arg name="use_joint_pub"		default="false"/>
+  <arg
+    name="model" />
+  <param
+    name="robot_description"
+    textfile="$(find sagittarius_descriptions)/urdf/sagittarius_descriptions.urdf" />
+
+  <node if="$(arg joint_pub_gui)"
+    name="joint_state_publisher_gui"
+    pkg="joint_state_publisher_gui"
+    type="joint_state_publisher_gui" />
+
+  <node if="$(arg use_joint_pub)"
+    name="joint_state_publisher"
+    pkg="joint_state_publisher"
+    type="joint_state_publisher">
+  </node>
+
+  <node
+    name="robot_state_publisher"
+    pkg="robot_state_publisher"
+    type="robot_state_publisher" />
+
+  <node
+    name="rviz"
+    pkg="rviz"
+    type="rviz"
+    args="-d $(find sagittarius_descriptions)/urdf.rviz" />
+
+</launch>

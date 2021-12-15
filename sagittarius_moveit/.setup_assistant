@@ -1,0 +1,11 @@
+moveit_setup_assistant_config:
+  URDF:
+    package: sagittarius_descriptions
+    relative_path: urdf/sagittarius_descriptions.urdf
+    xacro_args: "--inorder "
+  SRDF:
+    relative_path: config/sagittarius_arm.srdf
+  CONFIG:
+    author_name: litian.zhuang
+    author_email: litian.zhuang@nxrobo.com
+    generated_timestamp: 1635498672

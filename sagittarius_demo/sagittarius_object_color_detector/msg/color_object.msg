@@ -1,0 +1,4 @@
+geometry_msgs/Point position
+int16 size_width
+int16 size_height
+int32 color_type

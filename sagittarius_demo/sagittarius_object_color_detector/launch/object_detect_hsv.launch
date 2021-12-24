@@ -1,0 +1,9 @@
+<launch>
+
+  <include file="$(find sagittarius_object_color_detector)/launch/usb_cam.launch" />
+
+  <rosparam command="load" file="$(find sagittarius_object_color_detector)/config/vision_config.yaml" />
+
+  <node name="object_detector" pkg="sagittarius_object_color_detector" type="object_detector" output="screen" />
+
+</launch>
